@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
             print('Menu button');
           },
         ),
-        title: const Text('SHRINE'),
+        //title: const Text('SHRINE'),
         // TODO: Add trailing buttons (102)
         actions: <Widget>[
           IconButton(
