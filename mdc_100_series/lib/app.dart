@@ -30,7 +30,7 @@ class ShrineApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Shrine',
-     
+
       // TODO: Change home: to a Backdrop with a HomePage frontLayer (104)
       home: Backdrop(
         // TODO: Make currentCategory field take _currentCategory (104)
