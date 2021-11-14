@@ -29,6 +29,8 @@ class _LoginPageState extends State<LoginPage> {
   final _unfocusedColor = Colors.grey[600];
   final _usernameFocusNode = FocusNode();
   final _passwordFocusNode = FocusNode();
+
+  get kShrineBlack => null;
   @override
   void initState() {
     super.initState();
@@ -52,7 +54,8 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 80.0),
             Column(
               children: <Widget>[
-                Image.asset('assets/diamond.png'),
+                Image.asset('assets/diamond.png', color: kShrineBlack),
+
                 const SizedBox(height: 16.0),
                 Text(
                   'SHRINE',
