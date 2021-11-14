@@ -116,29 +116,15 @@ class _LoginPageState extends State<LoginPage> {
               children: <Widget>[
                 // TODO: Add buttons (101)
 
-                TextButton(
-                  child: const Text('CANCEL'),
-                  style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all(
-                      Theme.of(context).colorScheme.secondary,
-                    ),
-                    shape: MaterialStateProperty.all(
-                      const BeveledRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(7.0)),
-                      ),
-                    ),
-                  ),
+
                 // TODO: Add an elevation to NEXT (103)
-            ElevatedButton(
-              child: const Text("NEXT"),
-              style: ButtonStyle(
-                elevation: MaterialStateProperty.all(8.0),
-                shape: MaterialStateProperty.all(
-                  const BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
-                  ),
+                ElevatedButton(
+                  child: const Text('NEXT'),
+                  // New code
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(8.0),
+                  ), onPressed: () {  },
                 ),
-              ),
                 // TODO: Add a beveled rectangular border to NEXT (103)
                 ElevatedButton(
                   child: const Text('NEXT'),
@@ -146,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                     // TODO: Show the next page (101)
                     Navigator.pop(context);
                   },
-                ), onPressed: () {  },
+                ),
               ],
             ),
           ],
