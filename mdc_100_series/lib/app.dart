@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'colors.dart';
 import 'home.dart';
@@ -24,35 +25,26 @@ import 'category_menu_page.dart';
 
 
 // TODO: Convert ShrineApp to stateful widget (104)
-
-class _ShrineAppState extends State<ShrineApp> {
-  Category _currentCategory = Category.all;
-
-  void _onCategoryTap(Category category) {
-    setState(() {
-      _currentCategory = category;
-    });
-  }
-
-class _ShrineAppState extends State<ShrineApp> {
+class _ShrineAppState extends State< ShrineApp> {
   @override
   Widget build(BuildContext context) {
+    var _currentCategory;
     return MaterialApp(
       title: 'Shrine',
 
       // TODO: Change home: to a Backdrop with a HomePage frontLayer (104)
-    home: Backdrop(
-  // TODO: Make currentCategory field take _currentCategory (104)
-  currentCategory: _currentCategory,
-  // TODO: Pass _currentCategory for frontLayer (104)
-  frontLayer: HomePage(category: _currentCategory),  // TODO: Change backLayer field value to CategoryMenuPage (104)
-  backLayer: CategoryMenuPage(
-  currentCategory: _currentCategory,
-  onCategoryTap: _onCategoryTap,
-  ),
-  frontTitle: Text('SHRINE'),
-  backTitle: Text('MENU'),
-  ),
+      home: Backdrop(
+        // TODO: Make currentCategory field take _currentCategory (104)
+        currentCategory: _currentCategory,
+        // TODO: Pass _currentCategory for frontLayer (104)
+        frontLayer: HomePage(category: _currentCategory),  // TODO: Change backLayer field value to CategoryMenuPage (104)
+        backLayer: CategoryMenuPage(
+          currentCategory: _currentCategory,
+          onCategoryTap: _onCategoryTap,
+        ),
+        frontTitle: Text('SHRINE'),
+        backTitle: Text('MENU'),
+      ),
       // TODO: Make currentCategory field take _currentCategory (104)
       // TODO: Pass _currentCategory for frontLayer (104)
       // TODO: Change backLayer field value to CategoryMenuPage (104)
@@ -75,6 +67,17 @@ class _ShrineAppState extends State<ShrineApp> {
     );
   }
 }
+
+
+class _ShrineAppState extends State<ShrineApp> {
+  Category _currentCategory = Category.all;
+
+  void _onCategoryTap(Category category) {
+    setState(() {
+      _currentCategory = category;
+    });
+  }}
+
 
 // TODO: Build a Shrine Theme (103)
 
@@ -134,4 +137,12 @@ TextTheme _buildShrineTextTheme(TextTheme base) {
   Widget build(BuildContext context) {
     // TODO: implement build
     throw UnimplementedError();
+  }
+
+
+mixin ShrineApp {
+}  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('mixin', mixin));
   }
